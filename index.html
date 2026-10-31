@@ -157,11 +157,10 @@ footer{padding:34px 0 20px;text-align:center;color:var(--muted);font-size:.86rem
 
 <div id="gracias"><section><div class="wrap" style="text-align:center">
 <div class="k">¡Gracias!</div><h2>Tu lugar <em>casi está listo</em></h2>
-<p style="margin:12px 0 20px">Dos pasos más para dejar todo confirmado:</p>
-<ol class="steps" style="text-align:left"><li><span><b>Llena la encuesta.</b> Son 12 preguntas y tardas unos 4 minutos.</span></li><li><span><b>Entra a la comunidad de WhatsApp.</b> Ahí recibes la información del taller.</span></li></ol>
-<a class="btn block" id="form" style="margin-bottom:12px">1 · Llenar la encuesta</a>
-<a class="btn ghost block" id="comm">2 · Entrar a la comunidad</a>
-<p style="color:var(--muted);font-size:.9rem;margin-top:18px">Alison confirmará tu pago por WhatsApp. Dirección: Calle 77 sur #35a-71, Maderos del Campo 2, Sabaneta.</p>
+<p style="margin:12px 0 20px">Escríbele a Alison por WhatsApp para confirmar tu cupo:</p>
+<ol class="steps" style="text-align:left"><li><span><b>Toca el botón de abajo.</b> Se abre el chat de Alison con un mensaje listo.</span></li><li><span><b>Escribe tus datos y adjunta tu comprobante de pago.</b> Alison te agrega a la lista de asistentes.</span></li><li><span><b>Recibe la encuesta y entra a la comunidad.</b> Alison te los envía por WhatsApp.</span></li></ol>
+<a class="btn block" id="form" style="margin-bottom:12px">Enviar mis datos y comprobante</a>
+<p style="color:var(--muted);font-size:.9rem;margin-top:18px">Tu cupo se confirma cuando Alison verifica el pago. Dirección: Calle 77 sur #35a-71, Maderos del Campo 2, Sabaneta.</p>
 <p style="margin-top:12px"><a href="#" id="back" style="color:var(--rose-d);font-weight:800">Volver al taller</a></p>
 </div></section></div>
 
@@ -183,8 +182,8 @@ function wa(t){return "https://wa.me/"+CFG.WA+"?text="+encodeURIComponent(t)}
 function setLink(id,url,fb){var e=document.getElementById(id);if(!e)return;e.href=url||fb;if(/^https?:/.test(e.href)&&e.href.indexOf(location.host)<0){e.target="_blank";e.rel="noopener"}}
 setLink("pay",CFG.PAY_URL,wa("Hola Alison, quiero reservar mi pareja para el taller del 15 de noviembre. ¿Me envías el enlace de pago?"));
 setLink("wa",wa("Hola Alison, quiero información del taller de preparación al parto del 15 de noviembre."));
-setLink("form",CFG.FORM_URL,wa("Hola Alison, ya pagué mi cupo del taller y quiero la encuesta."));
-setLink("comm",CFG.COMMUNITY_URL,wa("Hola Alison, ya pagué mi cupo del taller y quiero entrar a la comunidad."));
+setLink("form","",wa("Hola Alison, ya pagué mi cupo del taller del 15 de noviembre. Mis datos:\nNombre de la mamá: \nWhatsApp: \nNombre del acompañante: \nSemanas de embarazo: \nAdjunto mi comprobante de pago."));
+
 function tick(){var ms=new Date(CFG.EVENT)-new Date();if(ms<0)ms=0;var s=Math.floor(ms/1000);
  document.getElementById("d").textContent=Math.floor(s/86400);document.getElementById("h").textContent=String(Math.floor(s%86400/3600)).padStart(2,"0");
  document.getElementById("m").textContent=String(Math.floor(s%3600/60)).padStart(2,"0");document.getElementById("s").textContent=String(s%60).padStart(2,"0")}
