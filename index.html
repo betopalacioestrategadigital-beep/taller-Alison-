@@ -176,7 +176,7 @@ var CFG={
   COMMUNITY_URL:"",  /* enlace de invitación a la comunidad de WhatsApp */
   WA:"573242749666",
   EVENT:"2026-11-15T08:00:00-05:00",
-  SPONSORS:[ {name:"Sueñitos de Bebé · Tienda para bebés", logo:"suenitos.png", url:""}, {name:"María González · Pestañas y cejas", logo:"mariagonzalez.png", url:""}, {name:"Coconatu · Leche de coco artesanal", logo:"coconatu.png", url:"https://www.instagram.com/lechedecoconatu"} ]
+  SPONSORS:[ {name:"Sueñitos de Bebé · Tienda para bebés", logo:"suenitos.png", url:"https://www.instagram.com/suenitosdebebemedellin"}, {name:"María González · Pestañas y cejas", logo:"mariagonzalez.png", url:"https://www.instagram.com/mgpestanasacademia"}, {name:"Coconatu · Leche de coco artesanal", logo:"coconatu.png", url:"https://www.instagram.com/lechedecoconatu"} ]
 };
 function wa(t){return "https://wa.me/"+CFG.WA+"?text="+encodeURIComponent(t)}
 function setLink(id,url,fb){var e=document.getElementById(id);if(!e)return;e.href=url||fb;if(/^https?:/.test(e.href)&&e.href.indexOf(location.host)<0){e.target="_blank";e.rel="noopener"}}
