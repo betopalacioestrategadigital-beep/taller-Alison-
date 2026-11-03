@@ -59,7 +59,7 @@ section{padding:46px 0}
 .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px}
 .steps li:before{content:counter(s);flex:0 0 32px;height:32px;border-radius:50%;background:var(--rose-d);color:#fff;font-weight:800;display:grid;place-items:center}
 details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:10px}summary{font-weight:800;cursor:pointer}details p{color:var(--muted);margin-top:8px;font-size:.96rem}
-.sp{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}.sp img{height:54px;width:auto;border-radius:10px;background:#fff;padding:6px;border:1px solid var(--line)}
+.sp{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}.sp img{height:130px;width:auto;border-radius:14px;background:#fff;padding:6px;border:1px solid var(--line)}
 footer{padding:34px 0 20px;text-align:center;color:var(--muted);font-size:.86rem}footer img{width:74px;height:74px;margin:0 auto 10px;border-radius:50%}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,246,243,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}.sticky .btn{max-width:528px;margin:0 auto}.sticky{transform:translateY(120%);transition:transform .25s}.sticky.show{transform:none}
 #gracias{display:none}body.ok #gracias{display:block}body.ok #main{display:none}body.ok .sticky{display:none}
@@ -176,7 +176,7 @@ var CFG={
   COMMUNITY_URL:"",  /* enlace de invitación a la comunidad de WhatsApp */
   WA:"573242749666",
   EVENT:"2026-11-15T08:00:00-05:00",
-  SPONSORS:[ /* {name:"Marca", logo:"logo.png", url:"https://instagram.com/marca"} */ ]
+  SPONSORS:[ {name:"Sueñitos de Bebé · Tienda para bebés", logo:"suenitos.png", url:""} ]
 };
 function wa(t){return "https://wa.me/"+CFG.WA+"?text="+encodeURIComponent(t)}
 function setLink(id,url,fb){var e=document.getElementById(id);if(!e)return;e.href=url||fb;if(/^https?:/.test(e.href)&&e.href.indexOf(location.host)<0){e.target="_blank";e.rel="noopener"}}
@@ -188,7 +188,7 @@ function tick(){var ms=new Date(CFG.EVENT)-new Date();if(ms<0)ms=0;var s=Math.fl
  document.getElementById("d").textContent=Math.floor(s/86400);document.getElementById("h").textContent=String(Math.floor(s%86400/3600)).padStart(2,"0");
  document.getElementById("m").textContent=String(Math.floor(s%3600/60)).padStart(2,"0");document.getElementById("s").textContent=String(s%60).padStart(2,"0")}
 tick();setInterval(tick,1000);
-if(CFG.SPONSORS.length){var sp=document.getElementById("sp");CFG.SPONSORS.forEach(function(x){var a=document.createElement("a");a.href=x.url||"#";a.target="_blank";a.rel="noopener";var i=document.createElement("img");i.src=x.logo;i.alt=x.name;a.appendChild(i);sp.appendChild(a)});document.getElementById("patro").hidden=false}
+if(CFG.SPONSORS.length){var sp=document.getElementById("sp");CFG.SPONSORS.forEach(function(x){var a=document.createElement(x.url?"a":"div");if(x.url){a.href=x.url;a.target="_blank";a.rel="noopener"}var i=document.createElement("img");i.src=x.logo;i.alt=x.name;a.appendChild(i);sp.appendChild(a)});document.getElementById("patro").hidden=false}
 window.addEventListener('scroll',function(){document.querySelector('.sticky').classList.toggle('show',window.scrollY>520)},{passive:true});
 function route(){document.body.classList.toggle("ok",location.hash==="#gracias");if(location.hash==="#gracias")window.scrollTo(0,0)}
 window.addEventListener("hashchange",route);route();
